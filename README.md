@@ -146,6 +146,25 @@ npm test        # unit tests only
 The plugin is split so the rendering pipeline (`src/render.ts`) is free of
 renderables and unit-testable without a terminal.
 
+## Local development
+
+OpenCode loads local plugins from `<global-config>/plugins/<name>/` and expects
+the entrypoints at the **package root**. Two things that are easy to get wrong:
+
+- Plugin discovery **ignores symlinked directories** — a symlink into a checkout
+  will silently not load.
+- `index.ts` and `tui.ts` must exist at the package root; the `package.json`
+  `exports` map alone is not enough for discovery.
+
+So to dogfood a checkout, clone it directly into the plugins directory:
+
+```sh
+git clone https://github.com/000geid/opencode-mermaid \
+  ~/.config/opencode/plugins/opencode-mermaid
+```
+
+Running OpenCode instances hot-reload the plugin when its files change.
+
 ## Credits
 
 - Rendering by [`beautiful-mermaid`](https://github.com/lukilabs/beautiful-mermaid),
