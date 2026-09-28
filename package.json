@@ -1,0 +1,53 @@
+{
+  "name": "opencode-mermaid",
+  "version": "0.1.0",
+  "description": "OpenCode plugin that renders Mermaid code blocks as inline Unicode diagrams in the terminal UI.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Diego Alvarado",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/000geid/opencode-mermaid.git"
+  },
+  "homepage": "https://github.com/000geid/opencode-mermaid#readme",
+  "bugs": {
+    "url": "https://github.com/000geid/opencode-mermaid/issues"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "mermaid",
+    "diagram",
+    "tui",
+    "ascii",
+    "cli"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./tui": "./src/tui.ts"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test",
+    "check": "npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "beautiful-mermaid": "^1.1.3"
+  },
+  "peerDependencies": {
+    "@opencode/plugin": ">=2.0.18",
+    "@opentui/core": ">=0.5.12"
+  },
+  "devDependencies": {
+    "@opencode/plugin": "2.0.18",
+    "@opencode/theme": "2.0.18",
+    "@opentui/core": "^0.5.12",
+    "@types/node": "^24.0.0",
+    "typescript": "5.8.2"
+  }
+}
