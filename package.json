@@ -23,10 +23,12 @@
     "cli"
   ],
   "exports": {
-    ".": "./src/index.ts",
-    "./tui": "./src/tui.ts"
+    ".": "./index.ts",
+    "./tui": "./tui.ts"
   },
   "files": [
+    "index.ts",
+    "tui.ts",
     "src",
     "README.md",
     "LICENSE"
